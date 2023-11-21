@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[MAC] Osx private-vpn @Morado</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a65831fd-f1f7-476d-86d5-ea272e2c999d" class="page sans"><header><h1 class="page-title">[MAC] Osx private-vpn @Morado</h1></header><div class="page-body"><p id="753c9b19-5420-4353-aad8-c4637976aa7f" class="">
+</p><p id="0c01eb6d-e0f7-4b46-b01f-0e2f210b36df" class="">vpn.zip (Download)</p><figure id="f6c63300-e3c4-4dbf-a0b3-6a73cded2c18"><div class="block-color-red source"><a href="https://morado-doc-static.s3.us-west-2.amazonaws.com/vpn-morado.zip">https://morado-doc-static.s3.us-west-2.amazonaws.com/vpn-morado.zip</a></div></figure><p id="be158adb-f109-43f9-9a4e-ddfb97b60447" class="">
+</p><p id="54004fe2-65f6-413c-9e3d-24fa498bfcc0" class="">AWS private-vpn @Morado</p><p id="2763f6b4-3396-464c-b9e4-8c796d0df124" class=""><div class="indented"><p id="a6ed9fbb-15a2-440a-895c-df65f5fc5c88" class="">Go to download openvpn-client <a href="https://tunnelblick.net/downloads.html">https://tunnelblick.net/downloads.html</a></p></div></p><p id="3f3e19b4-fac1-4a26-9c31-18edbd6a17d0" class="">
+</p><figure id="f7b946d6-0900-4238-b2ce-e417e739d950" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled.png"/></a></figure><p id="9991d7b4-724f-44a9-8f58-8401d1308839" class="">
+</p><p id="3f741de4-3b71-4090-9ec6-98fd2114098e" class="">Select Stable Version for Download and Doubleclick in dmg file:</p><p id="2001a560-5533-4120-8550-c03eac7f8f66" class=""><a href="https://tunnelblick.net/release/Tunnelblick_3.8.7a_build_5770.dmg">https://tunnelblick.net/release/Tunnelblick_3.8.7a_build_5770.dmg</a></p><p id="e90b5721-cc9d-4fde-97ee-4829963f931b" class="">
+</p><figure id="17b336c8-3407-4f87-b8a7-5807f18f58f5" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%201.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%201.png"/></a></figure><p id="ea27af6a-7a4e-4569-ba95-eb587976c404" class="">
+</p><p id="faa19386-6361-4601-a190-76e8daeec192" class="">Install Tunnelblick:</p><p id="3798cb9a-7261-440f-bce1-00ade49e589d" class="">DoubleClick in Tunnelblick icon and select open!</p><figure id="b322e606-80ec-4f4b-a3c6-db404b76d795" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%202.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%202.png"/></a></figure><p id="a6aafdc9-bfcb-46df-acc5-2f1b91238421" class="">
+</p><p id="5caf5048-d696-4e71-8e62-d20550dd53a4" class="">Insert your OSX credentials:</p><figure id="3ffd12b7-2d62-4a8a-b263-640409c4b36c" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%203.png"><img style="width:426px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%203.png"/></a></figure><p id="27b0ee94-789d-4f78-9bef-61b224a96422" class="">
+</p><p id="7680b235-9969-4f41-9a71-16f25a8da9f0" class="">
+</p><p id="6bd0c1e7-ddbb-4063-b14b-f15a453f4613" class="">Tunnelblick begins the installation process.</p><p id="7fa604e2-78d9-4a2a-8ffd-cace3fcffac0" class="">
+</p><figure id="4e82ab86-92f0-49b1-9ea0-3c96c3139ae3" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%204.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%204.png"/></a></figure><p id="e7706711-d761-45cb-9d82-76bf4b6f7534" class="">
+</p><p id="284d517f-f2df-4d31-a20c-97274086e011" class="">Optional – You can use your personal VPN in my case I use ExpressVPN(Connect Please).</p><figure id="2f85e41c-7e75-40a5-90a6-9dc6fcfd2b08" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%205.png"><img style="width:768px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%205.png"/></a></figure><p id="6a1e3247-ce17-4004-8ce1-b39925146ab0" class="">
+</p><p id="fc5b6387-0031-4b91-9762-bd766c6dc16f" class="">Configure Morado openvpn:</p><p id="15a17540-5141-4977-871d-fde10272a161" class="">vpn.zip</p><p id="6f2c6adc-3166-4f1d-82db-3d351939894e" class="">Extract the vpn.zip in the Desktop</p><figure id="aed8a738-8127-4c26-ac2c-084e1d241885" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%206.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%206.png"/></a></figure><p id="00710a58-9bbd-4448-8046-b3fc888bd8f9" class="">
+</p><p id="0d6c0aa1-d835-4d59-bb9c-023fb7bbb930" class="">Open Tunnelblick and Drag and Drop the file called Morado.ovpn</p><figure id="fcf90a46-ccba-4a89-a9ff-9435591920c2" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%207.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%207.png"/></a></figure><p id="5b56f4a8-a4cf-4180-a3c9-3bb34493c00d" class="">
+</p><p id="d44f36c8-65e6-4c4d-885e-4c31f6cce476" class="">Select users access (In my case I select Only-Me)</p><p id="4ec6c6d2-f929-4168-b38c-75288545525f" class="">
+</p><figure id="1410547e-2dcf-44e2-9b42-2877a2e3319a" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%208.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%208.png"/></a></figure><p id="c8b2ebb0-0b48-420c-98f6-9aeae70763a7" class="">
+</p><p id="c5a26a60-df09-4fef-a915-793836a7fc0d" class="">Insert you OSX credentials again.</p><figure id="7adefcca-c475-4920-a215-035741680a08" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%209.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%209.png"/></a></figure><p id="4df18184-b3d3-4d75-b528-6600ecc4c712" class="">
+</p><p id="af7814d0-017b-42a2-be27-7ac2a0870989" class="">Later, Select settings and configure this parameters :</p><p id="4e577faf-fa0b-42af-9db9-134b48ca9c3a" class="">
+</p><figure id="01f19de2-c972-423e-bfd1-909e97059ea1" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%2010.png"><img style="width:902px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%2010.png"/></a></figure><p id="c7272714-6ddc-4168-b7b6-29bfed7e4f62" class="">
+</p><p id="3d6bc19e-ca8c-4ae9-bb79-a489279f8a46" class="">Later, Click in Connect and Insert you Credentials for vpn access:</p><p id="3358b8ba-c2d4-449f-bb58-bf2d61392c2a" class="">
+</p><p id="e170a6e2-20d9-4c15-a106-c090a5387d88" class="">Request these credentials to administrator. ( devops-prod@Morado.co ) </p><figure id="38012dc7-2627-44f2-a11c-995de8dc4d1b" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%2011.png"><img style="width:734px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%2011.png"/></a></figure><p id="973e9c65-8679-4dbd-93ed-03ff8d53475c" class="">
+</p><p id="0f1e135f-e8fe-4a5d-8732-82b9b3f12377" class="">VPN Connected</p><figure id="8f9543be-d841-4028-8335-d87dc0634adc" class="image"><a href="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%2012.png"><img style="width:720px" src="%5BMAC%5D%20Osx%20private-vpn%20@Morado%20a65831fdf1f7476d86d5ea272e2c999d/Untitled%2012.png"/></a></figure><p id="710e340c-171d-4e69-90b2-2d2281289292" class="">
+</p><p id="a0753d1b-e389-49e8-bf64-8ac5e07f7ddb" class="">Test access to AWS sending ping to address or Morado Private Url  🙂  Enjoy</p><p id="d14c8bc1-d4ef-41d4-ba15-cf1034551604" class="">
+</p><p id="4eca6d3c-b9e0-4e92-a6b1-08c019602816" class=""><a href="https://Morado.latticehq.com/?pulseGroupEntityId=3edb2719-011f-423a-8528-1bb347f1b2fd">https://Morado.latticehq.com/?pulseGroupEntityId=3edb2719-011f-423a-8528-1bb347f1b2fd</a></p><p id="43154fc5-04db-4ed3-a0f7-165dd1089f93" class=""><a href="https://Morado.latticehq.com/?pulseGroupEntityId=3edb2719-011f-423a-8528-1bb347f1b2fd">https://Morado.latticehq.com/?pulseGroupEntityId=3edb2719-011f-423a-8528-1bb347f1b2fd</a></p><p id="cbf376d7-6186-4a1c-9ee1-e581ed035679" class="">
+</p></div></article></body></html>
